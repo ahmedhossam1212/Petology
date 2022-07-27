@@ -486,4 +486,80 @@ Widget buildfooter(BuildContext context)=>Container(
         ],
       ),
           
-          );
+          );  
+
+bool IsHover =false;
+
+     class BuildPetsList extends StatefulWidget {
+  const BuildPetsList({Key? key}) : super(key: key);
+
+  @override
+  State<BuildPetsList> createState() => _BuildPetsListState();
+}
+
+class _BuildPetsListState extends State<BuildPetsList> {
+  bool IsHover =false;
+  @override
+  Widget build(BuildContext context) {
+    return  MouseRegion( 
+          onEnter: (_){
+            setState(() {
+              IsHover =true;
+            });
+          },
+          onExit: (_){
+            setState(() {
+              IsHover = false;
+            });
+          },
+           child: AnimatedContainer(
+            duration: const Duration(seconds: 1),
+             child: Material(
+              elevation: IsHover ? 2 : 0 ,
+               child: Container(
+                   height: 400.0,
+                   width: 250.0,
+                   padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(15.0),
+                     border: Border.all(
+                width: 2,
+                color: Colors.brown,
+                     ),
+                     color: Colors.grey.withOpacity(0.5),
+                   ),
+                   child: Column(
+                     children: [
+                SizedBox(
+                  width: 300.0,
+                  height: 300.0,
+                  child: Image.asset(
+                    'assets/Photos/Karsten-winegeart.png',
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  'Dogs',
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: Colors.black,
+                      ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  'Read more',
+                  style: Theme.of(context).textTheme.caption!.copyWith(
+                        color: Colors.black,
+                      ),
+                ),
+                     ],
+                   ),
+                 ),
+             ),
+           ),
+         );
+  }
+}
