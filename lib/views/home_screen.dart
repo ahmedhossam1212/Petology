@@ -1,6 +1,5 @@
 import 'package:bet_animals/componants/componants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class HomeScreen extends StatefulWidget {
