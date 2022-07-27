@@ -442,7 +442,7 @@ Widget buildfooter(BuildContext context)=>Container(
                             width: 20.0,
                           ),
                           Text(
-                            'Mansoura',
+                            'Cairo',
                             style:
                                 Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       color:Colors.grey,

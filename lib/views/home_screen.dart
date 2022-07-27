@@ -46,7 +46,7 @@ bool dogIsHover = false;
               ),
               child: Row( mainAxisAlignment: MainAxisAlignment.start ,
                 children: [
-                  Container( width: 300,
+                  SizedBox( width: 300,
                   height: 400,
                     child: Column(
                       children: [
@@ -410,9 +410,251 @@ bool dogIsHover = false;
             ],
            ),
           ),
-           
+                 
+                 Container( width: double.infinity,
+                 height: 750,
+                 color: HexColor("#F1F1F1"),
+                  child:Stack(children:  [
+                      
+            Positioned( 
+                top: 50,
+                right: 700,
+                child: SizedBox( 
+                  width: 100,
+                  height: 100,
+                  child: Image.asset("assets/leg/Iconmaterial-pets.png",color: HexColor("#FFE3C5"),)),
+              ),
+            
+            Positioned(
+              top: 50,
+              right: 700,
+              child: SizedBox( width: 250,
+              height: 100,
+                child: Text("Our friendes who looking for a house",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),),
+              ),
+            ),
+                   
+                   Positioned(top: 200,
+                   left: 300,
+                     child: Row( mainAxisAlignment: MainAxisAlignment.center,
+                       children: [ 
+                        SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      const  SizedBox(width: 20,),
+               SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      
+                    const  SizedBox(width: 20,),
+                     SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      
+                    const  SizedBox(width: 20,),
+                     SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      
+                    const  SizedBox(width: 20,),
+                       ],
+                     ),
+                   ),
+                   //----------------
+                    Positioned(top: 500,
+                   left: 400,
+                     child: Row( mainAxisAlignment: MainAxisAlignment.center,
+                       children: [ 
+                        SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      const  SizedBox(width: 20,),
+               SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      
+                    const  SizedBox(width: 20,),
+                     SizedBox( height: 300,
+                        width: 200,
+                          child: Stack(
+                            children: [  
+                             Positioned( top: 70,
+                              right: 20,
+                               child: CircleAvatar(
+                                                       backgroundColor: HexColor("492F24"),
+                                                       radius: 80,
+                                                       child: Text("Pet food",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                                       color: HexColor("FFE3C5")
+                                                    ),),
+                                                  ),
+                             ), 
+                          Positioned(
+                             left: 50,
+                             bottom: 130,
+                             child: SizedBox(
+                               height: 200,
+                               width: 100,
+                               child: Image.asset("assets/icons/Group.png"))) ,
+                                   
+                                                
+                                                ]
+                          ),
+                        ),
+                      
+                    const  SizedBox(width: 20,),
+                    
+                      
+                    const  SizedBox(width: 20,),
+                       ],
+                     ),
+                 
+                 
+                   ),
 
-     
+
+                  ]) ,
+                 ),
 
              buildfooter(context)
          ]),
