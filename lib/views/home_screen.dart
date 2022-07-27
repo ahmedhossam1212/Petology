@@ -327,6 +327,94 @@ bool dogIsHover = false;
               ],
             ),
            ),
+
+           SizedBox(width: double.infinity,
+           height: 700,
+           child: Stack(
+            children: [
+
+              Positioned( 
+                top: 50,
+                right: 700,
+                child: SizedBox( 
+                  width: 100,
+                  height: 100,
+                  child: Image.asset("assets/leg/Iconmaterial-pets.png",color: HexColor("#FFE3C5"),)),
+              ),
+            
+            Positioned(
+              top: 50,
+              right: 700,
+              child: SizedBox( width: 250,
+              height: 100,
+                child: Text("Our friendes who looking for a house",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),),
+              ),
+            ),
+           const SizedBox(height: 100,),
+            Center(
+              child: SizedBox( width: 1000,
+              height: 400,
+                child: ListView.separated(itemBuilder: (context,index)=>const BuildPetsList() ,
+                 separatorBuilder: (context,index)=> const SizedBox(width:100 ),
+                  itemCount: 5,
+                   scrollDirection: Axis.horizontal,
+                  ),
+              ),
+            ),
+    
+            Positioned( 
+              top: 350,
+              left: 50,
+              child: CircleAvatar( 
+                backgroundColor: HexColor("#492F24"),
+                child: IconButton(onPressed: (){}, icon: const Icon( Icons.arrow_back_ios_new,color: Colors.white,))),
+            ),
+            Positioned( 
+              top: 350,
+              right: 50,
+              child: CircleAvatar( 
+                backgroundColor: HexColor("#492F24"),
+                child: IconButton(onPressed: (){}, icon: const Icon( Icons.arrow_forward_ios_rounded, color:Colors.white,))),
+            ),
+
+        Positioned( 
+          bottom: 50,
+          left: 600,
+          child: InkWell( onTap: () {},
+                           child: Container(
+                            width: 300,
+                            height: 70,
+                            decoration: BoxDecoration(
+                              color:  HexColor("#492F24"),
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            child: Row( mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Show more",style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.bold,
+                                  color:  Color.fromARGB(255, 215, 152, 129)
+                                
+                                ),),
+                                const SizedBox(width: 20),
+                                const Icon(Icons.arrow_forward_ios_outlined,color: Color.fromARGB(255, 215, 152, 129),)
+                              ],
+                            ),
+                           ),
+                         ),
+        )
+
+
+            ],
+           ),
+          ),
+           
+
+     
+
              buildfooter(context)
          ]),
        ),
