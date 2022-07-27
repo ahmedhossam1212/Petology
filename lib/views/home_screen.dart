@@ -11,6 +11,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+bool catIsHover = false;
+bool dogIsHover = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,8 +132,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),      
-          )
-          , Container(
+          ),
+           SizedBox(
             width: double.infinity,
             height: 600,
             child: Padding(
@@ -202,8 +206,128 @@ class _HomeScreenState extends State<HomeScreen> {
               ],)
             ),
               
-           )
-         
+           ),
+           Container(
+            color:HexColor("#F1F1F1"),
+            width: double.infinity,
+            height: 500,
+            child: Stack(
+              children: [
+
+                Positioned(
+                  top: 30,
+                  right: 700, 
+                  child: SizedBox(
+                    height: 100,
+                    width: 100,
+                    child: Image.asset("assets/leg/Iconmaterial-pets.png",color: HexColor("#FFe3C5"),)),
+                ),
+                 Positioned( top:40 ,
+                 right: 700,
+                   child: Text("Lets get this right ....",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: HexColor("#492F24")
+                                 ),),
+                 ),
+                  Positioned( top: 100,
+                  right: 650,
+                    child: Text("What kind of friend you looking for?",style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: HexColor("#492F24"),
+                      fontSize: 25, 
+                    ),),
+                  ),
+                   
+                   Positioned( 
+                    top: 200,
+                    right: 900,
+                     child: MouseRegion( 
+                      onEnter: (f){
+                        setState(() {
+                          dogIsHover=true;
+                        });
+                      },
+                      onExit: (f){
+                        setState(() {
+                          dogIsHover=false; 
+                        });
+                      },
+                       child: AnimatedContainer( 
+                        height: 200,
+                        width: 200,
+                       duration: const Duration(milliseconds: 100 ),
+                       decoration: BoxDecoration(
+                         color: dogIsHover ? HexColor("FFe3C5") :HexColor("#F1F1F1") ,
+                         border: Border.all(
+                          color: dogIsHover ? HexColor("#492F24") : Colors.grey,
+                           width: dogIsHover ? 2 : 1,
+                        ),
+                        borderRadius: BorderRadius.circular(20)
+                       ),
+                       child: Column(
+                        children: [ const SizedBox(height: 20,),
+                          Image.asset("assets/icons/dog.png"),
+                          const SizedBox(height: 10,),
+                           Text("Dogs",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: HexColor("#492F24"),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold, 
+                      ),),
+                        ],
+                       ),
+                        ),
+                     ),
+                   ),
+                
+
+                    Positioned( 
+                    top: 200,
+                    right: 550,
+                     child: MouseRegion( 
+                      onEnter: (f){
+                        setState(() {
+                          catIsHover=true;
+                        });
+                      },
+                      onExit: (f){
+                        setState(() {
+                          catIsHover=false; 
+                        });
+                      },
+                       child: AnimatedContainer( 
+                        height: 200,
+                        width: 200,
+                       duration: const Duration(milliseconds: 100 ),
+                       decoration: BoxDecoration(
+                         color: catIsHover ? HexColor("FFe3C5") :HexColor("#F1F1F1") ,
+                         border: Border.all(
+                          color: catIsHover ? HexColor("#492F24") : Colors.grey,
+                           width: catIsHover ? 2 : 1,
+                        ),
+                        borderRadius: BorderRadius.circular(20)
+                       ),
+                       child: Column(
+                        children: [ const SizedBox(height: 10,), 
+                          Image.asset("assets/icons/cat.png"),
+                          const SizedBox(height: 10,),
+                          Text("Cats",style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: HexColor("#492F24"),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold, 
+                      ),),
+                        ],
+                       ),
+                        ),
+                     ),
+                   ),
+                  
+                
+                   
+                
+              ],
+            ),
+           ),
+             buildfooter(context)
          ]),
        ),
     );
