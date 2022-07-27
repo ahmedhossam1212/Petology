@@ -1,4 +1,5 @@
 import 'package:bet_animals/componants/componants.dart';
+import 'package:bet_animals/views/help.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -69,7 +70,9 @@ bool dogIsHover = false;
                         ),
                        const SizedBox(height: 20,),
        
-                       InkWell( onTap: () {},
+                       InkWell( onTap: () {
+                        navigateTo(context, const HelpScreen());
+                       },
                          child: Container(
                           width: 300,
                           height: 70,
@@ -85,7 +88,8 @@ bool dogIsHover = false;
                               
                               ),),
                               const SizedBox(width: 20),
-                              const Icon(Icons.arrow_forward_ios_outlined)
+                              const Icon(Icons.arrow_forward_ios_outlined),
+                             
                             ],
                           ),
                          ),
