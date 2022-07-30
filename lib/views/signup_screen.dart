@@ -19,6 +19,8 @@ var emailController =TextEditingController();
 var rePasswordController =TextEditingController();
 var fristNameController =TextEditingController();
 var lastNameController =TextEditingController();
+var categoryController =TextEditingController();
+
 
 
 
@@ -281,7 +283,8 @@ var lastNameController =TextEditingController();
                           child: Material(  
                             borderRadius: BorderRadius.circular(20),
                             elevation: 5.0,
-                            child: defaultFormField(
+                            child: defaultFormField( 
+                              controller: categoryController,
                               type: TextInputType.text,
                                validate: (){},
                                 hint: "Country", 

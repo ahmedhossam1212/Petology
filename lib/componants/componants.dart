@@ -2,9 +2,11 @@
 import 'dart:js';
 import 'package:bet_animals/views/home_screen.dart';
 import 'package:bet_animals/views/login_screen.dart';
+import 'package:bet_animals/views/request.dart';
 import 'package:bet_animals/views/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 Widget defaultButton({
@@ -62,7 +64,7 @@ Widget defaultTextButton({
 
 
 Widget defaultFormField({
- TextEditingController? controller,
+required TextEditingController? controller,
 required TextInputType type,
 Function ?onSubmit,
 Function ?onChange,
@@ -85,7 +87,7 @@ Container(
   child:   Row(
     children: [
       Expanded(
-        child: TextFormField(  
+        child: TextFormField(    
         
           readOnly: widget==null?false:true,
         
@@ -189,10 +191,11 @@ Widget defaultOutLinedButton({
   required  double height,
   required VoidCallback onTap,
   required String text,
-  
+  Color borderColor =Colors.white,
   Color backgroundColor = Colors.brown,  
   Color textColor = Colors.white,
   double radius= 10.0,
+  double borderWidth =1.0,
 })=> InkWell( 
   onTap: onTap,
   child:Container(
@@ -201,8 +204,8 @@ Widget defaultOutLinedButton({
   decoration: BoxDecoration(
     shape: BoxShape.rectangle,
     border: Border.all(
-      color: Colors.white,
-      width: 1.0,
+      color: borderColor,
+      width:borderWidth,
     ),
   borderRadius: BorderRadius.circular(
   radius,
@@ -248,7 +251,9 @@ Widget customLoginAppBar(BuildContext context)=>Container(
                const SizedBox(width: 10.0,),
               defaultTextButton(function: (){}, text: "Services", textColor: Colors.white),
                const SizedBox(width: 10.0,),
-              defaultTextButton(function: (){}, text: "Request", textColor: Colors.white),
+              defaultTextButton(function: (){
+                navigateAndFinish(context, const RequestScreen());
+              }, text: "Request", textColor: Colors.white),
              const SizedBox(width: 400,),
                defaultOutLinedButton(width: 70.0, height: 30.0, onTap: (){
                 navigateTo(context, const SignUpScreen());
@@ -293,7 +298,9 @@ Widget customSignUpAppBar(BuildContext context)=>Container(
                const SizedBox(width: 10.0,),
               defaultTextButton(function: (){}, text: "Services", textColor: Colors.white),
                const SizedBox(width: 10.0,),
-              defaultTextButton(function: (){}, text: "Request", textColor: Colors.white),
+              defaultTextButton(function: (){
+                navigateTo(context,  const RequestScreen());
+              }, text: "Request", textColor: Colors.white),
              const SizedBox(width: 400,),
                defaultOutLinedButton(width: 70.0, height: 30.0, onTap: (){
                 navigateTo(context, const HomeScreen());
@@ -499,26 +506,33 @@ bool IsHover =false;
 
 class _BuildPetsListState extends State<BuildPetsList> {
   bool IsHover =false;
+  double height = 300;
+   double width = 200;  
   @override
   Widget build(BuildContext context) {
-    return  MouseRegion( 
-          onEnter: (_){
-            setState(() {
-              IsHover =true;
-            });
-          },
-          onExit: (_){
-            setState(() {
-              IsHover = false;
-            });
-          },
-           child: AnimatedContainer(
-            duration: const Duration(seconds: 1),
+    return  Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: MouseRegion( 
+            onEnter: (_){
+              setState(() {
+                IsHover =true;
+                width = 250;
+                height = 350;
+              });
+            },
+            onExit: (_){
+              setState(() {
+                IsHover = false;
+                 width = 200;
+                height = 300;
+              });
+            },
              child: Material(
-              elevation: IsHover ? 2 : 0 ,
-               child: Container(
-                   height: 400.0,
-                   width: 250.0,
+              elevation: IsHover ? 9 : 0 ,
+               child: AnimatedContainer(
+                duration: const Duration(milliseconds:500 ),
+                   height:height,
+                   width:width,
                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                    decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(15.0),
@@ -526,7 +540,7 @@ class _BuildPetsListState extends State<BuildPetsList> {
                 width: 2,
                 color: Colors.brown,
                      ),
-                     color: Colors.grey.withOpacity(0.5),
+                     color: Colors.white.withOpacity(0.5),
                    ),
                    child: Column(
                      children: [
@@ -549,17 +563,22 @@ class _BuildPetsListState extends State<BuildPetsList> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                Text(
-                  'Read more',
-                  style: Theme.of(context).textTheme.caption!.copyWith(
-                        color: Colors.black,
-                      ),
-                ),
+                 defaultOutLinedButton(width: 100,
+                 height: 50,
+                  onTap: (){},
+                   text: "Red more",
+                   backgroundColor: Colors.white,
+                   textColor: HexColor("492F24"),
+                   borderColor: HexColor("FFE3C5"),
+                   borderWidth: 2.0,
+                   radius: 20,
+                   )
                      ],
+
                    ),
                  ),
              ),
            ),
-         );
+    );
   }
 }

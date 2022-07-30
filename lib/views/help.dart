@@ -12,6 +12,10 @@ class HelpScreen extends StatefulWidget {
 }
 
 class _HelpScreenState extends State<HelpScreen> {
+  var phoneContoller=TextEditingController();
+  var locationContoller=TextEditingController();
+  var categoryContoller=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
@@ -21,7 +25,7 @@ class _HelpScreenState extends State<HelpScreen> {
 
         child: customSignUpAppBar(context),
         ),
-        body: Container( width: double.infinity,
+        body: SizedBox( width: double.infinity,
         height: double.infinity,
         child: Stack(
 
@@ -75,7 +79,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         Material(
                           elevation: 5.0,
                           borderRadius: BorderRadius.circular(20),
-                          child: defaultFormField(
+                          child: defaultFormField( controller: categoryContoller,
                                     type: TextInputType.text, 
                                   validate: (){},
                                    hint: "Category",
@@ -90,7 +94,9 @@ class _HelpScreenState extends State<HelpScreen> {
                         ) ,),
                         Material(elevation: 5.0,
                         borderRadius: BorderRadius.circular(20),
-                          child: defaultFormField(type: TextInputType.url,
+                          child: defaultFormField(
+                            controller: locationContoller,
+                            type: TextInputType.url,
                            validate: (){},
                             hint: "Location"),
                         ),
@@ -99,7 +105,9 @@ class _HelpScreenState extends State<HelpScreen> {
                         Material(
                           elevation: 5.0,
                         borderRadius: BorderRadius.circular(20),
-                          child: defaultFormField(type: TextInputType.number, 
+                          child: defaultFormField(
+                            controller: phoneContoller,
+                            type: TextInputType.number, 
                           validate: (){},
                            hint: "Phone Number"),
                         ),
