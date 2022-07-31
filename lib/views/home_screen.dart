@@ -1,4 +1,5 @@
 import 'package:bet_animals/componants/componants.dart';
+import 'package:bet_animals/views/feeding_instructions.dart';
 import 'package:bet_animals/views/help.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -447,7 +448,9 @@ bool dogIsHover = false;
                        children: [ 
                         SizedBox( height: 300,
                         width: 200,
-                          child: InkWell( onTap: (){},
+                          child: InkWell( onTap: (){
+                            navigateTo(context, const FeedingInstructionsScreen());
+                          },
                             child: Stack(
                               children: [  
                                Positioned( top: 70,
